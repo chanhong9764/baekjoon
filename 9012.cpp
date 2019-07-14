@@ -25,11 +25,13 @@ int main(int argc, char **argv)
             {
                 if(s.empty())
                     s.push(input[j]);
-                else
+                else if(s.top() == '(')
                 	s.pop();
+                else
+                    s.push(input[j]);
             }
             else
-                cout << "Error !" <<endl;
+                cout << "Input Error !" <<endl;
         }
         if(s.empty())
             cout << "YES" << endl;
@@ -38,5 +40,6 @@ int main(int argc, char **argv)
         while(!s.empty())
             s.pop();
     }
+    
     return 0;
 }
